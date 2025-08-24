@@ -25,4 +25,23 @@ return {
   -- 		},
   -- 	},
   -- },
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    cond = function()
+      return not vim.g.vscode
+    end,
+    event = "InsertEnter",
+    config = function()
+      require("copilot").setup({
+        suggestion = {
+          enabled = true,
+          auto_trigger = true,
+        },
+        filetypes = {
+          ["*"] = true
+        },
+      })
+    end,
+  }
 }
