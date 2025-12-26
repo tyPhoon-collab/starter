@@ -91,6 +91,7 @@ return {
       scope = { enabled = true },
       scroll = { enabled = true },
       statuscolumn = { enabled = true },
+      terminal = { enabled = true },
       words = { enabled = true },
       styles = {
         notification = {
@@ -108,6 +109,8 @@ return {
       { "<leader>gl", function() Snacks.lazygit.log() end, desc = "Lazygit Log (cwd)" },
       { "<leader>cR", function() Snacks.rename.rename_file() end, desc = "Rename File" },
       { "<leader>nh", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications" },
+      { "<leader>tt", function() Snacks.terminal() end, desc = "Toggle Terminal" },
+      { "<leader>tT", function() Snacks.terminal(nil, { cwd = vim.fn.getcwd() }) end, desc = "Terminal (CWD)" },
       { "<leader>ff", function() Snacks.picker.files() end, desc = "Find Files" },
       { "<leader>fb", function() Snacks.picker.buffers() end, desc = "Buffers" },
       { "<leader>fg", function() Snacks.picker.git_files() end, desc = "Find Git Files" },
