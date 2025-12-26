@@ -37,11 +37,41 @@ return {
         suggestion = {
           enabled = true,
           auto_trigger = true,
+          keymap = {
+            accept = "<C-l>",
+          },
         },
         filetypes = {
           ["*"] = true
         },
       })
     end,
-  }
+  },
+  {
+    "mikavilpas/yazi.nvim",
+    event = "VeryLazy",
+    keys = {
+      {
+        "<leader>y",
+        "<cmd>Yazi<cr>",
+        desc = "Open yazi at the current file",
+      },
+      {
+        "<leader>cw",
+        "<cmd>Yazi cwd<cr>",
+        desc = "Open yazi in the current working directory",
+      },
+      {
+        "<leader>n",
+        "<cmd>Yazi toggle<cr>",
+        desc = "Resume the last yazi session",
+      },
+    },
+    opts = {
+      open_for_directories = false,
+      keymaps = {
+        show_help = "<f1>",
+      },
+    },
+  },
 }
